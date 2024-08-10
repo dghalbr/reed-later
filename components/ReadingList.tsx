@@ -1,13 +1,16 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View} from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Linking, TouchableOpacity} from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
 const styles = StyleSheet.create({
   container: {
+    display: 'flex',
     flex: 1,
-    paddingTop: 22,
+    paddingTop: 60,
     borderRadius: 15,
     backgroundColor: '#EEEEEE',
-    margin: 100,
+    margin: 0,
+    textAlign: 'center',
+    alignSelf: 'stretch',
   },
   item: {
     padding: 10,
@@ -31,6 +34,15 @@ const styles = StyleSheet.create({
   },
   hamburgerMenu: {
     paddingLeft: 10,
+  },
+  heading: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 28,
+  },
+  horizontalRule: {
+    borderBottomColor: 'black',
+    borderBottomWidth: StyleSheet.hairlineWidth,
   }
 });
 
@@ -44,13 +56,22 @@ const data: string[] = [
 ]
 
 const buttonsListArr = data.map(link => (
-    <Text style={styles.listItem} key={link}>{link}</Text>
+    // <Text style={styles.listItem} key={link}>{link}</Text>
+    <>
+    <TouchableOpacity key={link} onPress={() => Linking.openURL(link)}>
+      <Text style={styles.listItem} key={link}>{link}</Text>
+      {link != data[data.length -1] &&
+        <View style={styles.horizontalRule} />
+      }      
+    </TouchableOpacity>
+    </>
 ));
 
 const ReadingList = () => {
   return (
     <View style={styles.container}>
       <Feather name="menu" style={styles.hamburgerMenu} size={24} color="black" />
+      <Text style={styles.heading}> Reed-Later List </Text>
       <ScrollView style={styles.scrollView}>
       <View style={styles.listContainer}>
         {buttonsListArr}
