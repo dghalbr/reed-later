@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Text,
-  StyleSheet,
   Pressable,
   GestureResponderEvent,
 } from "react-native";

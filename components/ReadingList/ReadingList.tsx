@@ -5,29 +5,28 @@ import {
   View,
   Linking,
   TouchableOpacity,
-  Button,
   GestureResponderEvent,
 } from "react-native";
 import componentStyles from "./ReadingListStyles";
 import NewEntryButton from "../NewEntryButton/NewEntryButton";
 import Feather from "@expo/vector-icons/Feather";
 
-const data: string[] = [
-  "http://www.example.com/",
-  "http://www.example.net/board/appliance.aspx",
-  "http://anger.example.org/anger/bone",
-  "http://example.com/bed/bait#bikes",
-  "https://bedroom.example.com/advice?basketball=alarm&bomb=bomb#bell",
-  "http://example.com/",
+const data: IReedDataEntry[] = [
+  { url: "http://www.example.com/" },
+  { url: "http://www.example.net/board/appliance.aspx" },
+  { url: "http://anger.example.org/anger/bone" },
+  { url: "http://example.com/bed/bait#bikes" },
+  { url: "https://bedroom.example.com/advice?basketball=alarm&bomb=bomb#bell" },
+  { url: "http://example.com/" },
 ];
 
-const buttonsListArr = data.map((link) => (
+const buttonsListArr = data.map((entry: IReedDataEntry) => (
   <>
-    <TouchableOpacity key={link} onPress={() => Linking.openURL(link)}>
-      <Text style={componentStyles.listItem} key={link}>
-        {link}
+    <TouchableOpacity key={entry.url} onPress={() => Linking.openURL(entry.url)}>
+      <Text style={componentStyles.listItem} key={entry.url}>
+        {entry.url}
       </Text>
-      {link != data[data.length - 1] && <View style={componentStyles.horizontalRule} />}
+      {entry != data[data.length - 1] && <View style={componentStyles.horizontalRule} />}
     </TouchableOpacity>
   </>
 ));
