@@ -43,6 +43,13 @@ export const componentStyles = StyleSheet.create({
     borderBottomColor: "black",
     borderBottomWidth: StyleSheet.hairlineWidth,
   },  
+  buttonContainer: {
+    display: 'flex',
+    marginLeft: 'auto',
+    paddingRight: 25,
+    fontSize: 48,
+    height: 250,
+  },
 })
 
  export default componentStyles;
