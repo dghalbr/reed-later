@@ -5,8 +5,11 @@ import {
   View,
   Linking,
   TouchableOpacity,
+  Button,
+  GestureResponderEvent,
 } from "react-native";
 import componentStyles from "./ReadingListStyles";
+import NewEntryButton from "../NewEntryButton/NewEntryButton";
 import Feather from "@expo/vector-icons/Feather";
 
 const data: string[] = [
@@ -29,6 +32,11 @@ const buttonsListArr = data.map((link) => (
   </>
 ));
 
+
+function buttonClick(event: GestureResponderEvent): void {
+  console.log("Button Logic here");
+} 
+
 const ReadingList = () => {
   return (
     <View style={componentStyles.container}>
@@ -42,6 +50,11 @@ const ReadingList = () => {
       <ScrollView style={componentStyles.scrollView}>
         <View style={componentStyles.listContainer}>{buttonsListArr}</View>
       </ScrollView>
+      <View style={componentStyles.buttonContainer}>
+      <NewEntryButton 
+      onPress={buttonClick} 
+      title={"New +"} /> 
+      </View>
     </View>
   );
 };
