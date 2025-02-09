@@ -42,6 +42,7 @@ const ReadingList = () => {
 
   return (
     <View style={componentStyles.container}>
+      <img src="assets/Reeds.png" alt="Reeds" width="40px" height="40px"/>
       <Feather
         name="menu"
         style={componentStyles.hamburgerMenu}
@@ -53,9 +54,7 @@ const ReadingList = () => {
         <View style={componentStyles.listContainer}>{buttonsListArr}</View>
       </ScrollView>
       <View style={componentStyles.buttonContainer}>
-      <NewEntryButton 
-      onPress={buttonClick} 
-      title={"New +"} /> 
+      <NewEntryButton onPress={buttonClick} title={"New +"} /> 
       </View>
     </View>
   );
