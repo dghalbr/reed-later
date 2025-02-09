@@ -7,7 +7,9 @@ export const componentStyles = StyleSheet.create({
     padding: 10,
     width: 75,
     borderRadius: 20,
-    backgroundColor: "white",
+    backgroundColor: "#79a819",
+    borderTopColor: "black",
+    borderBottomColor: "black",
 
     ...Platform.select({
       ios: {

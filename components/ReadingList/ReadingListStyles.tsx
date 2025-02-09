@@ -5,8 +5,7 @@ export const componentStyles = StyleSheet.create({
     display: "flex",
     flex: 1,
     paddingTop: 60,
-    borderRadius: 15,
-    backgroundColor: "#EEEEEE",
+    backgroundColor: "#aeeb34",
     margin: 0,
     textAlign: "center",
     alignSelf: "stretch",
@@ -21,13 +20,15 @@ export const componentStyles = StyleSheet.create({
     borderRadius: 15,
   },
   listItem: {
-    backgroundColor: "white",
+    backgroundColor: "#79a819",
     padding: 10,
-    borderBottomColor: "gray",
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: "black",
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderBottomWidth: 1,
   },
   listContainer: {
-    backgroundColor: "white",
+    backgroundColor: "#79a819",
     borderRadius: 15,
     padding: 5,
   },
@@ -41,7 +42,6 @@ export const componentStyles = StyleSheet.create({
   },
   horizontalRule: {
     borderBottomColor: "black",
-    borderBottomWidth: StyleSheet.hairlineWidth,
   },  
   buttonContainer: {
     display: 'flex',
