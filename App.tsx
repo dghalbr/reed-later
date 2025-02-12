@@ -1,14 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import ReadingList from './components/ReadingList/ReadingList';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import HomeScreen from './components/HomeScreen/HomeScreen';
+import SettingsScreen from './components/SettingsScreen/SettingsScreen';
 import React from 'react';
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ReadingList />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Settings" component={SettingsScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
 
